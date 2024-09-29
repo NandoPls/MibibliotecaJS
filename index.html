@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Personal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Incluye el SDK de Firebase si lo estás usando -->
+</head>
+<body>
+    <header>
+        <h1>Lectura Personal</h1>
+        <button id="dark-mode-toggle">Modo Oscuro</button>
+    </header>
+
+    <!-- Área para arrastrar y soltar archivos -->
+    <div id="drop-area" class="drop-area">
+        <p><span class="textDrop">Suelta aquí los libros que quieras cargar</span></p>
+    </div>
+
+    <!-- Contenedor donde se mostrarán las imágenes del PDF -->
+    <section id="pdf-previews" class="pdf-previews">
+        <!-- Aquí se añadirán las imágenes de los PDFs -->
+    </section>
+
+    <!-- Contenedor del lector de PDF -->
+    <div id="pdf-reader" class="pdf-reader hidden">
+        <button id="close-reader">✕</button>
+        <!-- Botón de modo oscuro en el lector -->
+        <button id="dark-mode-toggle-reader">Modo Oscuro</button>
+        <div id="book-container">
+            <canvas id="page-left"></canvas>
+            <canvas id="page-right"></canvas>
+        </div>
+        <div class="navigation">
+            <button id="prev-page">◀ Anterior</button>
+            <span id="page-info">Página 1 de X</span>
+            <button id="next-page">Siguiente ▶</button>
+        </div>
+    </div>
+
+    <!-- Incluye la librería PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <!-- Incluye la librería SortableJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <!-- Tu archivo JavaScript -->
+    <script src="config.js"></script>
+
+    <script src="js.js"></script>
+</body>
+</html>

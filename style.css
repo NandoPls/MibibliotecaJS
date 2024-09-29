@@ -1,0 +1,287 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Estilo para el encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #bbb;
+    color: #000;
+}
+
+/* Estilo para el área de arrastrar y soltar */
+.drop-area {
+    width: 90%;
+    max-width: 600px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    line-height: 180px;
+    color: #aaa;
+    margin: 20px auto;
+    transition: border-color 0.3s, color 0.3s;
+    background-color: #fff;
+}
+
+.drop-area.dragover {
+    border-color: #000;
+    color: #000;
+}
+
+body.dark-mode .drop-area {
+    background-color: #1e1e1e;
+    border-color: #444;
+    color: #bbb;
+}
+
+body.dark-mode .drop-area.dragover {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Texto dentro del área de arrastrar y soltar */
+.textDrop {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Contenedor de vista previa de PDFs */
+.pdf-previews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Cada vista previa individual */
+.pdf-preview {
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pdf-preview img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .pdf-preview img {
+    border-color: #555;
+}
+
+body.dark-mode .pdf-preview {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .pdf-preview p {
+    color: #fff;
+}
+
+/* Estilos para el título del libro */
+.pdf-preview p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Añadimos estilo para el botón de eliminar */
+.delete-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+body.dark-mode .delete-button {
+    background-color: #b71c1c;
+}
+
+body.dark-mode .delete-button:hover {
+    background-color: #f44336;
+}
+
+/* Estilo para el elemento que se está arrastrando */
+.sortable-ghost {
+    opacity: 0.5;
+}
+
+/* Estilos para el lector de PDF */
+.pdf-reader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f0e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.pdf-reader.hidden {
+    display: none;
+}
+
+body.dark-mode .pdf-reader {
+    background-color: #121212;
+}
+
+/* Botón de cerrar */
+#close-reader {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+
+body.dark-mode #close-reader {
+    color: #fff;
+}
+
+/* Botón de modo oscuro en el lector */
+#dark-mode-toggle-reader {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    padding: 10px 15px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.dark-mode #dark-mode-toggle-reader {
+    background-color: #bbb;
+    color: #000;
+}
+
+/* Contenedor del "libro" */
+#book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin-top: 50px;
+}
+
+/* Estilos para las páginas */
+#book-container canvas {
+    width: 45%;
+    max-width: 400px;
+    margin: 0 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: white;
+    transition: background-color 0.3s, filter 0.3s;
+}
+
+body.dark-mode #book-container canvas {
+    background-color: #1e1e1e;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-mode #book-container canvas {
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+/* Navegación */
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 0 20px;
+    font-size: 16px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navigation button:hover {
+    background-color: #ddd;
+}
+
+body.dark-mode .navigation button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .navigation button:hover {
+    background-color: #555;
+}
+
+#page-info {
+    font-size: 18px;
+}
+
+body.dark-mode #page-info {
+    color: #fff;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    #book-container {
+        flex-direction: column;
+    }
+
+    #book-container canvas {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
